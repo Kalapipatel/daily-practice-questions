@@ -1,0 +1,68 @@
+import java.util.*;
+
+public class Timetable {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("enter the number of goal :");
+        int n = sc.nextInt();
+        String goal[] = new String[n];
+
+        kalapi k = new kalapi();
+        k.input(n, goal);
+        k.calculate(n, goal);
+        k.score();
+    }
+}
+
+class kalapi {
+    Scanner sc = new Scanner(System.in);
+
+    int pcount, ncount,score;
+
+    public void input(int n, String arr[]) {
+        for (int i = 0; i < n; i++) {
+            System.out.print("enter the goal-" + (i + 1) + " : ");
+            arr[i] = sc.nextLine();
+        }
+    }
+
+    public void print(int n, String arr[]) {
+        for (int i = 0; i < n; i++) {
+            System.out.print("your goal-" + (i + 1) + " is : ");
+            System.out.println(arr[i]);
+        }
+    }
+
+
+    public void calculate(int n, String arr[]) {
+        pcount = 0;ncount = 0;
+        
+        this.print(n, arr);
+
+        System.out.println("print 'y' for yes and 'n' for no");
+        for (int i = 1; i <= n; i++) {
+
+            System.out.print("your goal-" + i + " is completed ? ");
+            char x = sc.next().charAt(0);
+
+            if (x == 'y' || x == 'Y') {
+                pcount++;
+            } 
+            else if(x == 'n' || x == 'N') {
+                ncount++;
+            }
+            else{
+                System.out.println("this goal is not counted for today:");
+                continue;
+            }
+        }
+    }
+
+    public void score(){
+
+        score = pcount;
+        System.out.print("your daily socre is : "+score+"/"+(pcount+ncount));
+    }
+
+}
