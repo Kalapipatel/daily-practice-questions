@@ -1,0 +1,26 @@
+import java.util.*;
+
+class rough{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+
+        int len = sc.nextInt();
+        int arr[] = new int[len+1];
+
+        for(int i=0 ; i<len-1;i++){
+            arr[i] = sc.nextInt();
+        }
+
+        int pos = sc.nextInt();
+        int newn = sc.nextInt();
+
+        for(int i=len; i>pos ;i--){
+            arr[i] = arr[i-1];
+        }
+        arr[pos] = newn;
+
+        for(int i=0; i<len; i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
