@@ -1,0 +1,39 @@
+import java.util.*;
+
+class student{
+    int marks[];
+    String name;
+    int roll;
+    String pass;
+
+    student(student k){
+        this.name = k.name;
+        this.roll = k.roll;
+        this.marks = k.marks;
+    }
+    student(){
+        System.out.println("constroctor is called");
+        marks = new int[2];
+    }
+} 
+
+public class rough{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        student s1 = new student();
+        s1.name = "kalapi";
+        s1.roll = 5983;
+        s1.pass = "xyz";
+        s1.marks[0] = 23;
+        s1.marks[1] = 32;
+
+
+        student s2 = new student(s1);
+        for(int i=0 ;i<2 ; i++){
+            System.out.println(s2.marks[i]);
+        }
+        
+    }
+
+}
