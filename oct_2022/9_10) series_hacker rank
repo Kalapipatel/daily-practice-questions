@@ -1,0 +1,61 @@
+(a+ 2^0 * b) , (a+ 2^0 * b  +  2^1 * b) .....
+
+we use the integer a,b,and n to creat the following series:
+
+you are given q quries in the form of a,b and n. For each query, print the series
+corresponding to the given a,b and n values as a single line of n sapce-separated integers,
+
+input format:
+the first line contains an integer, q. denoting the number of queries.
+Each line i of the q subsequent lines contains three space-separated integers
+describing the respective ai,bi, and ni values for that query.
+
+output format:
+For each query, print the corresponding series on a new line. Each series must be
+printed in order as a single of n space-separated integers.
+
+sample input:
+2
+0 2 10
+5 3 5
+
+sample putput:
+2 6 14 30 62 126 254 510 1022 2046
+8 14 26 50 98
+
+
+---------------------------------------------------------------------------------------------------------
+
+import java.util.*;
+import java.io.*;
+
+class rough2{
+    public static void main(String []argh){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("enter the queries  : ");
+        int q = sc.nextInt();   
+        
+        if(q>=0 && q<=500)
+        int m=0;
+        while(m<q){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int n = sc.nextInt();
+
+            if((a>=0 && a<=50) && (b>=0 && b<=50) && (n>=1 && n<=15)){
+                int sum=a+b;
+                for(int i=0 ;i<n ;i++){
+                    System.out.print(sum + " ");
+                    int k = (int)(  (Math.pow(2,i+1)*b) );
+                    sum += k;
+                }
+            sum = 0;
+            }
+
+            
+            m++;
+        }
+        
+    }
+}
