@@ -1,0 +1,32 @@
+import java.util.*;
+
+class rough{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("enter the numbe : ");
+        int n = sc.nextInt();
+        int c=0; int k = 0; int l =0;
+
+        while(n != 0){
+            int temp = n%10;
+            c += temp;
+            n /= 10;
+        }
+
+        while(c != 0){
+            int temp = c%10;
+            k += temp;
+            c /= 10;
+        }
+           
+        while(k != 0){
+            int temp = k%10;
+            l += temp;
+            k /= 10;
+        }
+        System.out.println("the sum of the number is : "+l);
+        
+        
+    }
+}
