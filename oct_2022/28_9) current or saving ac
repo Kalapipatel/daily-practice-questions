@@ -1,0 +1,57 @@
+
+/*
+Assume that a bank maintains two kinds of account for its customers, one called savings account and 
+the other current account. The savings account provides interest and withdrawal facilities. 
+The current account provides withdrawal facility but no interest. Create a class Account that stores 
+customer name, account number, type of account (Savings / Current) and balance. Include the necessary 
+methods in order to achieve the following tasks:
+
+a) SavingsAccount - Get the account holder name, account number, type of account, and accept deposit from 
+a customer. Update the balance and calculate the interest for the balance amount and display the account 
+holder name, account number, type of account, and updated balance.The interest provided for savings account is 2%.
+b) CurrentAccount - Get the account holder name, account number, type of account, and accept withdrawal 
+from a customer. Update the balance and if the balance is less than Rs. 1000, a penalty of Rs.100/- is 
+debited from the account. Display the account holder name, account number, type of account, and updated 
+current balance.
+
+The initial deposit of SavingsAccount and CurrentAccount is Rs.1000/- and Rs.5000/- respectively
+
+*/
+import java.io.*;
+import java.io.FileInputStream;
+import java.util.*;
+
+class rough{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int sdep = 1000;
+        int cdep = 5000;
+        int bal;
+        
+        for(int i=0;i<=1;i++){
+            
+        String name = sc.next();
+        int accn = sc.nextInt();
+        String acctype = sc.next();
+        int dep = sc.nextInt();
+        
+        
+        
+        if(acctype.equals("Savings")){
+             bal = (int) ((dep + sdep)*0.02 + dep + sdep);
+            System.out.println(name + "\n" + accn + "\n" + acctype + "\n" + bal);
+
+        }
+        
+        else if(acctype.equals("Current")){
+             bal = cdep - dep;
+             if(bal<1000){
+                 bal-=100;
+             }
+            System.out.println(name + "\n" + accn + "\n" + acctype + "\n" + bal);
+
+        }
+        }
+    }
+}
